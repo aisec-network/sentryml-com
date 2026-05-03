@@ -4,7 +4,7 @@ const year = new Date().getFullYear();
 ---
 
 <footer class="border-t border-default mt-16">
-  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-10 grid gap-8 md:grid-cols-3 text-sm">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-10 grid gap-8 md:grid-cols-4 text-sm">
     <div>
       <div class="font-display font-bold text-base">{siteConfig.title}</div>
       <p class="text-muted mt-1">{siteConfig.tagline}</p>
@@ -23,6 +23,21 @@ const year = new Date().getFullYear();
             </a>
           </li>
         ))}
+      </ul>
+    </div>
+
+    <div>
+      <div class="font-medium mb-2">Tools</div>
+      <ul class="space-y-1 text-muted">
+        <li>
+          <a
+            href="https://aisec.blog/tools/prompt-injection-scanner/"
+            class="hover:text-accent-600"
+            rel="noopener"
+          >
+            Prompt injection scanner
+          </a>
+        </li>
       </ul>
     </div>
 
