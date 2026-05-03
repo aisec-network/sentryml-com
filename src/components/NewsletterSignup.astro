@@ -1,0 +1,31 @@
+---
+import { siteConfig } from "@config/site";
+const enabled = siteConfig.newsletter.enabled;
+---
+
+{enabled && (
+  <section class="my-10 p-6 border border-default rounded-lg bg-muted">
+    <h3 class="font-display font-bold text-lg">Subscribe</h3>
+    <p class="text-muted mt-1 text-sm">{siteConfig.tagline} — delivered when there's something worth your inbox.</p>
+    <form
+      method="POST"
+      action="/api/subscribe"
+      class="mt-4 flex flex-col sm:flex-row gap-2"
+    >
+      <input
+        type="email"
+        name="email"
+        required
+        placeholder="you@domain.com"
+        class="flex-1 px-3 py-2 rounded-md border border-default bg-[rgb(var(--bg))] focus:outline-none focus:ring-2 focus:ring-accent-500"
+      />
+      <button
+        type="submit"
+        class="px-4 py-2 rounded-md bg-accent-600 text-white font-medium hover:bg-accent-700 transition"
+      >
+        Subscribe
+      </button>
+    </form>
+    <p class="text-xs text-muted mt-2">No spam. Unsubscribe anytime.</p>
+  </section>
+)}
