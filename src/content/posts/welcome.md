@@ -4,6 +4,8 @@ description: "SentryML covers ML observability and MLOps from a production-engin
 pubDate: 2026-05-02
 tags: ["meta"]
 category: "site"
+heroImage: https://aisec-imagegen.th3gptoperator.workers.dev/featured/sentryml.com/welcome.png
+heroAlt: "What this site is for"
 ---
 
 SentryML covers ML observability and MLOps from a production-engineering perspective. The kind of writing we wanted to find when we were debugging a model that worked in eval and broke in prod, and didn't.

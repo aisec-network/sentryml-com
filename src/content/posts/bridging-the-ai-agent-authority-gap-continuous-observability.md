@@ -14,6 +14,8 @@ sources:
     url: "https://opentelemetry.io/docs/specs/semconv/gen-ai/gen-ai-agent-spans/"
 schema:
   type: "TechArticle"
+heroImage: https://aisec-imagegen.th3gptoperator.workers.dev/featured/sentryml.com/bridging-the-ai-agent-authority-gap-continuous-observability.png
+heroAlt: "The Authority Gap Is an Observability Problem: What MLOps Teams Should Borrow"
 ---
 
 A piece that ran on The Hacker News last week, [Bridging the AI Agent Authority Gap](https://thehackernews.com/2026/04/bridging-ai-agent-authority-gap.html), is being read as a security argument. The framing is broader than that, and the operational fix lands squarely in MLOps.
