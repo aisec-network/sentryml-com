@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "@layouts/BaseLayout.astro";
+import NewsletterSignup from "@components/NewsletterSignup.astro";
 import { siteConfig } from "@config/site";
 
 const posts = (await getCollection("posts", ({ data }) => !data.draft))
@@ -55,4 +56,6 @@ const recent = posts.slice(1, 11);
       <p>No posts yet. Check back soon.</p>
     </section>
   )}
+
+  <NewsletterSignup />
 </BaseLayout>

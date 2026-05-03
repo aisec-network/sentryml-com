@@ -55,7 +55,7 @@ export const siteConfig: SiteConfig = {
     abuse: "abuse@sentryml.com",
     editor: "editor@sentryml.com",
   },
-  newsletter: { enabled: false, provider: "none" },
+  newsletter: { enabled: true, provider: "none" },
   affiliate: {
     disclosure:
       "Some links in this post are affiliate links. We may earn a small commission at no extra cost to you. Editorial coverage is not influenced by affiliate relationships.",
