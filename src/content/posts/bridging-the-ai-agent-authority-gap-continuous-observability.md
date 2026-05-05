@@ -20,7 +20,7 @@ heroAlt: "The Authority Gap Is an Observability Problem: What MLOps Teams Should
 
 A piece that ran on The Hacker News last week, [Bridging the AI Agent Authority Gap](https://thehackernews.com/2026/04/bridging-ai-agent-authority-gap.html), is being read as a security argument. The framing is broader than that, and the operational fix lands squarely in MLOps.
 
-The argument: agents are not new actors with independent authority. They are delegated actors. A human, a service account, or another machine identity invokes them, and the agent's authority is whatever the caller passed down. Treat agents as a fresh identity bucket and you miss the structural problem, which is that you cannot see the delegation chain in the first place. The proposed fix is "continuous observability as the decision engine" — keep telemetry on who is delegating what to whom, and use that as the policy substrate.
+The argument: agents are not new actors with independent authority. They are delegated actors. A human, a service account, or another machine identity invokes them, and the agent's authority is whatever the caller passed down. Treat agents as a fresh identity bucket and you miss the [structural problem](https://techsentinel.news/posts/cyber-burnout/), which is that you cannot see the delegation chain in the first place. The proposed fix is "continuous observability as the decision engine" — keep telemetry on who is delegating what to whom, and use that as the policy substrate.
 
 If you run a model in production, this is not a security headline. This is a runbook gap.
 
@@ -63,3 +63,11 @@ The authority gap framing is useful even if you don't care about the security fr
 - [Bridging the AI Agent Authority Gap: Continuous Observability as the Decision Engine](https://thehackernews.com/2026/04/bridging-ai-agent-authority-gap.html) — The Hacker News piece, authored by Orchid Security, that motivates the delegation framing.
 - [AI Agent Observability — Evolving Standards and Best Practices](https://opentelemetry.io/blog/2025/ai-agent-observability/) — OpenTelemetry's overview of where the agent semantic conventions stand and which frameworks are aligning.
 - [Semantic Conventions for GenAI agent and framework spans](https://opentelemetry.io/docs/specs/semconv/gen-ai/gen-ai-agent-spans/) — The actual span and attribute spec to instrument against.
+
+## Related across the network
+
+- [AI Assistants Are Rewriting the Threat Model, Not Just the Workflow](https://techsentinel.news/posts/how-ai-assistants-are-moving-the-security-goalposts/) — *techsentinel.news*
+- [AI Agents Are Rewriting the Threat Model, and Most Security Teams Aren't Ready](https://techsentinel.news/posts/weekly-how-ai-assistants-are-moving-the-security-goalposts/) — *techsentinel.news*
+- [FlashRT cuts the GPU bill on long-context prompt injection attacks](https://aisec.blog/posts/flashrt-towards-computationally-and-memory-efficient-red-tea/) — *aisec.blog*
+- [OpenAI's Under-18 Principles: a guardrail engineer reads the new Model Spec](https://guardml.io/posts/weekly-updating-our-model-spec-with-teen-protections/) — *guardml.io*
+- [Cybersecurity Burnout Is a Structural Problem, Not a Personal One](https://techsentinel.news/posts/cyber-burnout/) — *techsentinel.news*
