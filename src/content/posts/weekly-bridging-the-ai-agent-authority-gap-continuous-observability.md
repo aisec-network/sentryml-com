@@ -32,7 +32,7 @@ Read it twice and a different shape emerges. The security industry is reaching f
 
 ## The signal
 
-The Hacker News article is one of three converging pressure points this quarter. The second is the [OWASP Top 10 for Agentic Applications 2026](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/), released as a peer-reviewed framework with three of its top risks — Agent Goal Hijack (ASI01), Tool Misuse and Exploitation (ASI02), and Identity and Privilege Abuse (ASI03) — sitting squarely in observability territory. The [Entro Security walkthrough](https://entro.security/blog/the-owasp-agentic-top-10-2026-what-it-means-for-ai-agents-and-non-human-identities/) of that list is blunt: "you cannot secure AI agents without securing the non-human identities and secrets that power them," and the recommended controls — short-lived dynamic credentials, JIT privileged access, agent identities tethered to a human owner — are useless without telemetry that ties them to actual runtime behavior.
+The Hacker News article is one of three converging pressure points this quarter. The second is the [OWASP Top 10 for Agentic Applications 2026](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/), released as a peer-reviewed framework with three of its top risks — Agent Goal Hijack (ASI01), Tool Misuse and Exploitation (ASI02), and Identity and Privilege Abuse (ASI03) — sitting squarely in observability territory. The [Entro Security walkthrough](https://entro.security/blog/the-owasp-agentic-top-10-2026-what-it-means-for-ai-agents-and-non-human-identities/) of that list is blunt: "you cannot secure [AI agents](https://techsentinel.news/posts/weekly-how-ai-assistants-are-moving-the-security-goalposts/) without securing the non-human identities and secrets that power them," and the recommended controls — short-lived dynamic credentials, JIT privileged access, agent identities tethered to a human owner — are useless without telemetry that ties them to actual runtime behavior.
 
 The third pressure point is a January [arXiv paper on agent drift](https://arxiv.org/abs/2601.04170) that quantified semantic deviation in multi-agent LLM systems and found that drift emerged after a median of 73 interactions in their simulations. That number is ugly. It means an agent that passes pre-deployment eval can be off-spec inside a single business day in production. The paper's recommended detection method — scheduled replay of a 50–500 trace golden set, run daily or on every deploy, with sustained drops flagged as drift events — is straight out of the ML monitoring playbook. We have done this for tabular models for a decade.
 
@@ -58,7 +58,7 @@ OpenInference and OpenTelemetry's GenAI semantic conventions are the obvious pla
 Most of the agent observability platforms that matter ship the heavy lifting:
 
 - **Trace collection at scale.** Phoenix, LangSmith, Langfuse, and Helicone all handle high-volume span ingestion with framework-aware parsing. Tool calls, retrieval steps, and intermediate model thoughts are first-class.
-- **Eval harnesses.** Phoenix ships LLM-as-judge primitives, embedding drift, and dataset-level regression. LangSmith has dataset replay against new model versions. Anthropic's [evals guide](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents) lays out the pattern: unit evals on discrete steps, regression suites for subjective quality, continuous production trace sampling. This is the loop that catches agent drift.
+- **Eval harnesses.** Phoenix ships LLM-as-judge primitives, embedding drift, and dataset-level regression. LangSmith has dataset replay against [new model](https://guardml.io/posts/weekly-updating-our-model-spec-with-teen-protections/) versions. Anthropic's [evals guide](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents) lays out the pattern: unit evals on discrete steps, regression suites for subjective quality, continuous production trace sampling. This is the loop that catches agent drift.
 - **Cost and latency telemetry.** Token spend per request, per user, per tool. Runaway-loop detection. p95 latency by tool. The [Latitude failure mode rundown](https://latitude.so/blog/why-ai-agents-break-in-production) lists tool-call retry storms and cost explosions as the two most common production fires; both are visible in any decent trace UI.
 - **Replay and diff.** LangSmith node-by-node state diffs, Phoenix trace comparisons. You can take a production trace and re-run it through a candidate model or prompt and compare outputs deterministically.
 
@@ -82,7 +82,7 @@ The vendor article reads like an argument for option 1 with the implication that
 
 The other piece worth naming: agents are going to fail in ways that look like drift but are actually authority leakage. An agent that starts hitting tools it has never hit before could be drifting semantically (a prompt regression, a model upgrade, a poisoned memory entry), or it could be exercising authority it inherited from a different session via a context-poisoning attack. The trace looks similar in both cases. Telling them apart requires the identity attributes on the span. ML monitoring teams that treat this as a pure quality problem will miss the security signal; security teams that treat it as a pure access-control problem will miss the drift. The runbook has to handle both.
 
-For the offensive-side view of how those authority chains get manipulated in practice — prompt injection that tricks an agent into impersonating a more privileged delegator — [aisec.blog](https://aisec.blog) has been tracking the techniques as they appear in the wild.
+For the offensive-side view of how those authority chains get manipulated in practice — [prompt injection](https://aisec.blog/posts/flashrt-towards-computationally-and-memory-efficient-red-tea/) that tricks an agent into impersonating a more privileged delegator — [aisec.blog](https://aisec.blog) has been tracking the techniques as they appear in the wild.
 
 ## Operational takeaway
 
@@ -105,3 +105,11 @@ The vendor framing of an "authority gap" is real but partial. The full picture i
 - [Agent Drift: Quantifying Behavioral Degradation in Multi-Agent LLM Systems Over Extended Interactions (arXiv 2601.04170)](https://arxiv.org/abs/2601.04170) — the source for the 73-interaction median drift figure and the three-flavor taxonomy of semantic, coordination, and behavioral drift.
 - [Demystifying evals for AI agents (Anthropic)](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents) — the practical guide to the eval loop the runbook section assumes.
 - [Why AI Agents Break in Production (Latitude)](https://latitude.so/blog/why-ai-agents-break-in-production) — failure mode catalog. Useful for grounding the cost-explosion and retry-storm references.
+
+## Related across the network
+
+- [AI Agents Are Rewriting the Threat Model, and Most Security Teams Aren't Ready](https://techsentinel.news/posts/weekly-how-ai-assistants-are-moving-the-security-goalposts/) — *techsentinel.news*
+- [AI Assistants Are Rewriting the Threat Model, Not Just the Workflow](https://techsentinel.news/posts/how-ai-assistants-are-moving-the-security-goalposts/) — *techsentinel.news*
+- [FlashRT cuts the GPU bill on long-context prompt injection attacks](https://aisec.blog/posts/flashrt-towards-computationally-and-memory-efficient-red-tea/) — *aisec.blog*
+- [AI Content Moderation: How LLM Filters Work and Where They Break](https://guardml.io/posts/ai-content-moderation/) — *guardml.io*
+- [OpenAI's Under-18 Principles: a guardrail engineer reads the new Model Spec](https://guardml.io/posts/weekly-updating-our-model-spec-with-teen-protections/) — *guardml.io*
