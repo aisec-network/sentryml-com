@@ -14,7 +14,7 @@ sources:
     url: "https://atlas.mitre.org/mitigations/"
 schema:
   type: "TechArticle"
-heroImage: https://aisec-imagegen.th3gptoperator.workers.dev/?prompt=blue%20team%20security%20operations%20center%2C%20analytical%20detection%20dashboard%2C%20professional%20technical&aspect=hero
+heroImage: https://aisec-imagegen.th3gptoperator.workers.dev/featured/sentryml.com/llm-detection-engineering-mitre-atlas-runbook.png
 heroAlt: "MITRE ATLAS LLM detection runbook visualization"
 ---
 
