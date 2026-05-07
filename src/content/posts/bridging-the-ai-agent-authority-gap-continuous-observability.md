@@ -2,7 +2,7 @@
 title: "The Authority Gap Is an Observability Problem: What MLOps Teams Should Borrow"
 description: "A new framing of AI agent risk argues that delegation, not identity, is the missing telemetry. ML platform teams already have the substrate to fix it."
 pubDate: 2026-05-03
-author: "Daniel Park"
+author: "Priya Anand"
 tags: ["agents", "observability", "mlops", "telemetry", "governance"]
 category: "monitoring"
 sources:

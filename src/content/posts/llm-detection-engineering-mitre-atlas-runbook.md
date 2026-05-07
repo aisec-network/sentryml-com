@@ -2,7 +2,7 @@
 title: "Detection Engineering for LLM Apps: A MITRE ATLAS-Mapped Runbook for Prompt Injection Alerting"
 description: "Mapping LLM application telemetry to MITRE ATLAS techniques. Concrete log shapes, alerting heuristics, and a runbook structure that scales beyond ad-hoc grep rules."
 pubDate: 2026-05-07
-author: "Daniel Park"
+author: "Priya Anand"
 tags: ["detection-engineering", "blue-team", "mitre-atlas", "llm-security", "siem", "incident-response"]
 category: "defense"
 sources:

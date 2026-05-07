@@ -2,7 +2,7 @@
 title: "A Lean 4 stability proof for tool-mediated LLM agents, and what it means for your runbook"
 description: "A new arXiv paper certifies controllability and ISS robustness for an LLM-driven SOC agent using Lean 4. The MLOps takeaway is simpler than the math: monitor the action catalog, not the model."
 pubDate: 2026-05-06
-author: "Daniel Park"
+author: "Priya Anand"
 tags: ["agents", "observability", "formal-methods", "llm-monitoring", "mlops"]
 category: "monitoring"
 sources:

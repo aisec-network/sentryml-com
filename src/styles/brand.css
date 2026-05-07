@@ -1,11 +1,7 @@
-/* Brand + visual variant for sentryml-com
- * cluster: defensive
- * variant: v2_left_terminal_dense
- * Generated 2026-05-07. Higher specificity than globals.css cluster rules. */
-
+/* Brand for sentryml-com: cluster=engineering, variant=v2_left_terminal_dense */
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap");
 
-body[data-cluster='defensive'] {
+body[data-cluster='engineering'] {
   --bg: 250 245 255;
   --fg: 30 27 75;
   --surface: 237 233 254;
@@ -22,33 +18,7 @@ body[data-cluster='defensive'] {
   --brand-accent-rgb: 124 58 237;
   --brand-variant: "v2_left_terminal_dense";
 }
-html.dark body[data-cluster='defensive'] {
+html.dark body[data-cluster='engineering'] {
   --bg: 250 245 255; --fg: 30 27 75; --surface: 237 233 254;
   --accent-500: 124 58 237; --accent-600: 124 58 237;
-}
-
-
-body[data-cluster='defensive'] {
-  --type-scale: 1.125;
-  --space-y: 0.25rem;
-}
-body[data-cluster='defensive'] h1 { font-size: calc(1rem * var(--type-scale) * var(--type-scale) * var(--type-scale) * var(--type-scale)); line-height: 1.05; }
-body[data-cluster='defensive'] h2 { font-size: calc(1rem * var(--type-scale) * var(--type-scale) * var(--type-scale)); line-height: 1.15; }
-body[data-cluster='defensive'] h3 { font-size: calc(1rem * var(--type-scale) * var(--type-scale)); line-height: 1.2; }
-body[data-cluster='defensive'] p { margin-block: var(--space-y); }
-
-
-/* Hero / header layout — variant: left */
-body[data-cluster='defensive'] .hero, body[data-cluster='defensive'] header.site-header { text-align: left; padding: 3rem 1rem 2rem; }
-
-/* Card style — variant: border-left */
-body[data-cluster='defensive'] article { border-left: 3px solid rgb(124 58 237); padding-left: 1.5rem; background: transparent; }
-
-/* Accent application — variant: left-border-bg */
-body[data-cluster='defensive'] article { border-left: 4px solid rgb(124 58 237); padding-left: 1rem; }
-
-/* Border radius — variant uses 0 */
-body[data-cluster='defensive'] article,
-body[data-cluster='defensive'] .card {
-  border-radius: 0;
 }
