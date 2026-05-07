@@ -2,7 +2,7 @@
 title: "Embedding-Based Agent Monitoring Has a Blind Spot. Here's What to Watch Instead."
 description: "A new paper demonstrates three attack patterns — Slow Drift, Benign Wrapper, Chaos Seeding — that defeat embedding-based detection of malicious agents in LLM multi-agent systems. The fix requires monitoring logit-level confidence, not just output embeddings."
 pubDate: 2026-05-05
-author: "SentryML Editorial"
+author: "Daniel Park"
 tags: ["agents", "security", "monitoring", "multi-agent", "observability"]
 category: "monitoring"
 sources:

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7c3aed" stop-opacity="0" />
+      <stop offset="1" stop-color="#7c3aed" stop-opacity="0.18" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#faf5ff" />
+  <rect x="80" y="540" width="120" height="6" fill="#7c3aed" />
+  
+  <g transform="translate(80, 200)">
+    <text font-family="Manrope, system-ui, sans-serif" font-size="78" font-weight="700" fill="#1e1b4b" letter-spacing="-2">
+      SentryML
+    </text>
+    <text y="120" font-family="Inter, system-ui, sans-serif" font-size="32" fill="#8b5cf6" letter-spacing="0">
+      Detection engineering for AI systems.
+    </text>
+    <text y="280" font-family="Inter, monospace" font-size="22" fill="#7c3aed" letter-spacing="2" text-transform="uppercase">
+      sentryml.com
+    </text>
+  </g>
+</svg>

@@ -2,7 +2,7 @@
 title: "The Authority Gap Is an Observability Problem: What MLOps Teams Should Actually Instrument"
 description: "Orchid Security's framing of agent governance as a delegation problem lands in the lap of ML observability teams. The instrumentation we already own decides whether the authority graph is real or theatre."
 pubDate: 2026-05-05
-author: "SentryML Editorial"
+author: "Daniel Park"
 tags: ["agent-observability", "identity", "mlops", "opentelemetry", "governance", "runbook"]
 category: "deep-dive"
 sources:

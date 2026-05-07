@@ -1,0 +1,33 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const persona = {
+  name: "Daniel Park",
+  bioShort: "Detection engineer and MITRE ATLAS contributor. Writes about defending AI systems using structured frameworks \u2014 not vendor hype. Blue-team-first, skeptical of AI-solves-everything narratives.",
+  bioLong: "Daniel Park is a detection engineer who has spent the last six years building AI-aware defensive systems for financial services and critical infrastructure. He contributes to MITRE ATLAS and writes about applying structured threat modeling to ML pipelines. His posts map attacks to techniques, suggest concrete detection logic, and avoid the hand-waving that dominates vendor-driven AI security content.",
+  voice: ["analytical", "MITRE-citing", "blue-team practitioner", "systematic"],
+  sites: ["guardml-io", "bestaisecuritytools-com", "bestllmscanners-com", "aisecreviews-com", "mlcves-com"],
+};
+const avatarUrl = "https://aisec-imagegen.th3gptoperator.workers.dev/?prompt=Professional%20headshot%20of%20Daniel%20Park%2C%20a%20Korean-American%20man%20in%20his%20mid-30s%2C%20dark%20technical%20background%2C%20analytical%20expression%2C%20photorealistic%2C%20professional%20headshot%2C%20square&aspect=square";
+---
+<BaseLayout title={`About ${persona.name}`} description={persona.bioShort}>
+  <article class="prose mx-auto max-w-2xl py-16 px-4">
+    <h1>About {persona.name}</h1>
+    <img src={avatarUrl} alt={persona.name} width="200" height="200" style="border-radius:50%;object-fit:cover;float:right;margin:0 0 1rem 1.5rem;" loading="eager" />
+    <p class="lead">{persona.bioShort}</p>
+    <p>{persona.bioLong}</p>
+    <h2>Voice</h2>
+    <p>{persona.voice.join(" · ")}</p>
+    {persona.sites.length > 0 && (
+      <>
+        <h2>Sister sites</h2>
+        <p>{persona.name} also writes for:</p>
+        <ul>
+          {persona.sites.map(s => {
+            const dom = s.replace(/-([^-]+)$/, ".$1");
+            return <li><a href={`https://${dom}`} target="_blank" rel="noreferrer">{dom}</a></li>;
+          })}
+        </ul>
+      </>
+    )}
+  </article>
+</BaseLayout>

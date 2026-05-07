@@ -2,7 +2,7 @@
 title: "The Agent Authority Gap Is an Observability Problem in a Security Costume"
 description: "Security vendors are pitching 'continuous observability' as the answer to ungoverned AI agents. ML platform teams already shipped most of the pipes. The missing piece is identity context inside the trace span — and that is a schema fight, not a tooling fight."
 pubDate: 2026-05-03
-author: "SentryML Editorial"
+author: "Daniel Park"
 tags: ["agent-observability", "tracing", "identity", "mlops", "phoenix", "langsmith"]
 category: "deep-dive"
 sources:
