@@ -11,7 +11,7 @@ body[data-cluster] {
   --font-display: "Instrument Serif", "Iowan Old Style", Georgia, serif;
   --font-body: Inter, "Helvetica Neue", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
-  --brand-accent-rgb: 41 174 174;
+  --brand-accent-rgb: 0 0 0;
   --brand-identity-font: "f10_serif_instrument_inter";
   --brand-identity-palette: "p01_h180_slate";
   --brand-identity-layout: "magazine";
@@ -26,7 +26,7 @@ html.dark body[data-cluster] {
   --border: 51 65 85;
   --surface: 15 23 42;
   --surface-alt: 30 41 59;
-  --brand-accent-rgb: 71 225 225;
+  --brand-accent-rgb: 255 255 255;
 }
 
 /* Density modifiers */
