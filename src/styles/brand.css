@@ -1,24 +1,35 @@
-/* Brand for sentryml-com: cluster=engineering, variant=v2_left_terminal_dense */
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap");
+/* Brand for sentryml-com: identity=f10_serif_instrument_inter+p01_h180_slate+magazine+v09_lab_log */
 
-body[data-cluster='engineering'] {
-  --bg: 250 245 255;
-  --fg: 30 27 75;
-  --surface: 237 233 254;
-  --muted: 250 245 255;
-  --muted-fg: 139 92 246;
-  --border: 139 92 246;
-  --font-display: "Manrope", system-ui, sans-serif;
-  --font-body: "Inter", system-ui, sans-serif;
-  --accent-400: 124 58 237;
-  --accent-500: 124 58 237;
-  --accent-600: 124 58 237;
-  --accent-700: 124 58 237;
-  --brand-tone: "sentry-purple";
-  --brand-accent-rgb: 124 58 237;
-  --brand-variant: "v2_left_terminal_dense";
+body[data-cluster] {
+  --bg: 255 255 255;
+  --fg: 15 23 42;
+  --muted: 248 250 252;
+  --muted-fg: 71 85 105;
+  --border: 226 232 240;
+  --surface: 255 255 255;
+  --surface-alt: 248 250 252;
+  --font-display: "Instrument Serif", "Iowan Old Style", Georgia, serif;
+  --font-body: Inter, "Helvetica Neue", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --brand-accent-rgb: 41 174 174;
+  --brand-identity-font: "f10_serif_instrument_inter";
+  --brand-identity-palette: "p01_h180_slate";
+  --brand-identity-layout: "magazine";
+  --brand-identity-voice: "v09_lab_log";
 }
-html.dark body[data-cluster='engineering'] {
-  --bg: 250 245 255; --fg: 30 27 75; --surface: 237 233 254;
-  --accent-500: 124 58 237; --accent-600: 124 58 237;
+
+html.dark body[data-cluster] {
+  --bg: 15 23 42;
+  --fg: 248 250 252;
+  --muted: 30 41 59;
+  --muted-fg: 148 163 184;
+  --border: 51 65 85;
+  --surface: 15 23 42;
+  --surface-alt: 30 41 59;
+  --brand-accent-rgb: 71 225 225;
 }
+
+/* Density modifiers */
+body.density-loose  { --space-section: 5rem; }
+body.density-normal { --space-section: 3rem; }
+body.density-dense  { --space-section: 1.5rem; }
