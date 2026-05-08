@@ -1,0 +1,202 @@
+{
+  "title": "ML/LLM Engineering & Operations Tools",
+  "description": "Curated tools for production ML/LLM engineering — observability, eval, drift detection, deployment, cost management.",
+  "categories": [
+    {
+      "name": "LLM Observability",
+      "tools": [
+        {
+          "name": "Langfuse",
+          "url": "https://langfuse.com/",
+          "license": "MIT (self-host) or SaaS",
+          "blurb": "Traces, evals, prompt management, cost tracking. Strongest open-source LLM observability platform.",
+          "our_take": "Default starting point for new LLM teams. Self-host on a single VM or use SaaS — either scales surprisingly far."
+        },
+        {
+          "name": "Phoenix (Arize)",
+          "url": "https://github.com/Arize-ai/phoenix",
+          "license": "Elastic",
+          "blurb": "OSS LLM and ML observability with embeddings analysis and drift detection.",
+          "our_take": "Strong if you have classical ML alongside LLMs. Embeddings-drift visualizations are best-in-class."
+        },
+        {
+          "name": "Helicone",
+          "url": "https://www.helicone.ai/",
+          "license": "Apache 2.0 (self-host) or SaaS",
+          "blurb": "Drop-in OpenAI-proxy for instant logging — change one base URL, get full request/response capture.",
+          "our_take": "Lowest setup cost. Less feature-rich than Langfuse but starts paying off in 5 minutes."
+        },
+        {
+          "name": "Honeyhive",
+          "url": "https://honeyhive.ai/",
+          "license": "Commercial",
+          "blurb": "End-to-end LLM observability + evaluation platform.",
+          "our_take": "Commercial-only; competitive with LangSmith. Good if you need a hosted product without DIY."
+        }
+      ]
+    },
+    {
+      "name": "ML Experiment Tracking",
+      "tools": [
+        {
+          "name": "MLflow",
+          "url": "https://mlflow.org/",
+          "license": "Apache 2.0",
+          "blurb": "Experiment tracking, model registry, and deployment — the OSS incumbent.",
+          "our_take": "Boring choice that works. Self-host the tracking server; integrate with whatever you use for serving."
+        },
+        {
+          "name": "Weights & Biases",
+          "url": "https://wandb.ai/",
+          "license": "Commercial",
+          "blurb": "Polished experiment tracking + sweeps + reports + artifact management.",
+          "our_take": "The premium option. Pricey at team scale but UX gain is real for research-heavy teams."
+        },
+        {
+          "name": "Aim",
+          "url": "https://aimstack.io/",
+          "license": "Apache 2.0",
+          "blurb": "Open-source experiment tracker with strong query/UI for run comparison.",
+          "our_take": "Underrated alternative to MLflow if you find MLflow's UI clunky. Smaller ecosystem."
+        }
+      ]
+    },
+    {
+      "name": "ML Monitoring & Drift",
+      "tools": [
+        {
+          "name": "Evidently AI",
+          "url": "https://www.evidentlyai.com/",
+          "license": "Apache 2.0",
+          "blurb": "Open-source ML monitoring — drift detection, data quality, model performance reports.",
+          "our_take": "Best OSS ML monitoring tool. Generates HTML reports out of the box; exports to Grafana for dashboards."
+        },
+        {
+          "name": "WhyLabs",
+          "url": "https://whylabs.ai/",
+          "license": "Commercial / OSS profiling lib",
+          "blurb": "ML monitoring SaaS with whylogs profiling library underpinning it.",
+          "our_take": "Profile lots of data without sending raw data — appealing for regulated industries."
+        },
+        {
+          "name": "Fiddler",
+          "url": "https://www.fiddler.ai/",
+          "license": "Commercial",
+          "blurb": "Enterprise ML observability — drift, fairness, explainability.",
+          "our_take": "Enterprise-grade with explainability emphasis. Worth evaluating if model risk management is a procurement requirement."
+        }
+      ]
+    },
+    {
+      "name": "Vector DBs",
+      "tools": [
+        {
+          "name": "Qdrant",
+          "url": "https://qdrant.tech/",
+          "license": "Apache 2.0",
+          "blurb": "Production-grade vector DB written in Rust. Self-hostable or managed.",
+          "our_take": "Performance leader for self-hosted. Filtering + payloads work well; ops are simple."
+        },
+        {
+          "name": "Weaviate",
+          "url": "https://weaviate.io/",
+          "license": "BSD-3 / Commercial",
+          "blurb": "Vector + object DB with hybrid search and modular vectorizer support.",
+          "our_take": "Strong hybrid search (BM25 + vectors). Heavier than Qdrant but offers more out-of-the-box."
+        },
+        {
+          "name": "pgvector",
+          "url": "https://github.com/pgvector/pgvector",
+          "license": "PostgreSQL",
+          "blurb": "Vector similarity for Postgres. The boring, durable choice.",
+          "our_take": "If you already run Postgres, start here. Performance is good enough for most apps; you defer to a dedicated vector DB only when you outgrow it."
+        },
+        {
+          "name": "Pinecone",
+          "url": "https://www.pinecone.io/",
+          "license": "Commercial",
+          "blurb": "Hosted vector DB pioneer, fully managed.",
+          "our_take": "Pricey at scale. Use only if the team's bandwidth for ops is zero and the budget allows."
+        }
+      ]
+    },
+    {
+      "name": "LLM Frameworks & Orchestration",
+      "tools": [
+        {
+          "name": "LangChain",
+          "url": "https://www.langchain.com/",
+          "license": "MIT",
+          "blurb": "The dominant LLM application framework — chains, agents, integrations.",
+          "our_take": "Inevitable in many stacks. Critique it all you want; the ecosystem and integration coverage make it hard to avoid."
+        },
+        {
+          "name": "LlamaIndex",
+          "url": "https://www.llamaindex.ai/",
+          "license": "MIT",
+          "blurb": "Framework specialized for RAG and document QA.",
+          "our_take": "Better than LangChain for pure RAG use cases. Cleaner abstractions; less framework drama."
+        },
+        {
+          "name": "DSPy",
+          "url": "https://github.com/stanfordnlp/dspy",
+          "license": "MIT",
+          "blurb": "Programming model for compiling LLM pipelines — optimizes prompts via gradient-free search.",
+          "our_take": "Different paradigm than LangChain. Worth trying for production prompt tuning that doesn't depend on a single model version."
+        },
+        {
+          "name": "Instructor",
+          "url": "https://github.com/jxnl/instructor",
+          "license": "MIT",
+          "blurb": "Pydantic-style structured output extraction from LLMs — adds retries, validation, schema-following.",
+          "our_take": "Drop-in for any structured-output use case. Cleaner than rolling your own JSON-mode wrappers."
+        }
+      ]
+    },
+    {
+      "name": "Inference & Serving",
+      "tools": [
+        {
+          "name": "vLLM",
+          "url": "https://github.com/vllm-project/vllm",
+          "license": "Apache 2.0",
+          "blurb": "Throughput-optimized LLM inference engine — PagedAttention, continuous batching.",
+          "our_take": "Best self-hosted serving for latency-tolerant batch workloads. 2-5x throughput improvement over naive transformers."
+        },
+        {
+          "name": "TGI (Text Generation Inference)",
+          "url": "https://github.com/huggingface/text-generation-inference",
+          "license": "Apache 2.0",
+          "blurb": "Hugging Face's inference server — Rust-based, OpenAI-compatible API.",
+          "our_take": "Solid choice when you're deploying HF-hosted models; tight integration with the hub."
+        },
+        {
+          "name": "Ollama",
+          "url": "https://ollama.com/",
+          "license": "MIT",
+          "blurb": "Local LLM runtime — manage and run models with one command.",
+          "our_take": "Best dev/local environment story. Not a production server, but invaluable for local prototyping and integration tests."
+        }
+      ]
+    },
+    {
+      "name": "Evaluation & Testing",
+      "tools": [
+        {
+          "name": "promptfoo",
+          "url": "https://www.promptfoo.dev/",
+          "license": "MIT",
+          "blurb": "Eval framework with side-by-side model comparison, CI integration, and red-team probes.",
+          "our_take": "Best eval framework UX. Use as the regression suite for any LLM application."
+        },
+        {
+          "name": "DeepEval",
+          "url": "https://github.com/confident-ai/deepeval",
+          "license": "Apache 2.0",
+          "blurb": "Pytest-style LLM eval framework — relevance, faithfulness, hallucination metrics.",
+          "our_take": "Clean Pytest integration. Use when your team already lives in Pytest test suites."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,222 @@
+{
+  "title": "MLOps & LLM Engineering Resources",
+  "description": "Papers, repos, courses, and communities for ML platform teams, LLMOps practitioners, and engineers running models in production.",
+  "categories": [
+    {
+      "name": "Papers",
+      "items": [
+        {
+          "title": "Scaling Laws for Neural Language Models",
+          "authors": "Kaplan et al., 2020",
+          "url": "https://arxiv.org/abs/2001.08361",
+          "tag": "scaling"
+        },
+        {
+          "title": "Efficient Memory Management for Large Language Model Serving with PagedAttention",
+          "authors": "Kwon et al., 2023",
+          "url": "https://arxiv.org/abs/2309.06180",
+          "tag": "inference"
+        },
+        {
+          "title": "MLflow: A Platform for Managing the Machine Learning Lifecycle",
+          "authors": "Zaharia et al., 2020",
+          "url": "https://arxiv.org/abs/2008.03965",
+          "tag": "mlops"
+        },
+        {
+          "title": "Responsible AI Practices for ML Engineers",
+          "authors": "Google AI",
+          "url": "https://ai.google/responsibilities/responsible-ai-practices/",
+          "tag": "governance"
+        },
+        {
+          "title": "Patterns for Building LLM-based Systems & Products",
+          "authors": "Eugene Yan, 2023",
+          "url": "https://eugeneyan.com/writing/llm-patterns/",
+          "tag": "architecture"
+        },
+        {
+          "title": "LLM Powered Autonomous Agents",
+          "authors": "Lilian Weng, 2023",
+          "url": "https://lilianweng.github.io/posts/2023-06-23-agent/",
+          "tag": "agents"
+        }
+      ]
+    },
+    {
+      "name": "Tools & Repos",
+      "items": [
+        {
+          "title": "MLflow",
+          "url": "https://mlflow.org/",
+          "tag": "experiment-tracking",
+          "description": "Open-source platform for managing the ML lifecycle including experiment tracking, model registry, and deployment."
+        },
+        {
+          "title": "Weights & Biases",
+          "url": "https://wandb.ai/",
+          "tag": "experiment-tracking",
+          "description": "ML experiment tracking, model versioning, and collaboration platform."
+        },
+        {
+          "title": "Evidently AI",
+          "url": "https://www.evidentlyai.com/",
+          "tag": "monitoring",
+          "description": "Open-source ML monitoring library for data drift, model performance, and data quality."
+        },
+        {
+          "title": "Arize AI",
+          "url": "https://arize.com/",
+          "tag": "monitoring",
+          "description": "ML observability platform for detecting issues in production models."
+        },
+        {
+          "title": "Fiddler AI",
+          "url": "https://www.fiddler.ai/",
+          "tag": "monitoring",
+          "description": "Enterprise ML monitoring with explainability and bias detection."
+        },
+        {
+          "title": "WhyLabs",
+          "url": "https://whylabs.ai/",
+          "tag": "monitoring",
+          "description": "AI observability platform powered by open-source whylogs."
+        },
+        {
+          "title": "Ray",
+          "url": "https://www.ray.io/",
+          "tag": "distributed-compute",
+          "description": "Distributed compute framework for scaling ML workloads."
+        },
+        {
+          "title": "vLLM",
+          "url": "https://vllm.ai/",
+          "tag": "inference",
+          "description": "High-throughput and memory-efficient LLM inference engine."
+        },
+        {
+          "title": "LangSmith",
+          "url": "https://smith.langchain.com/",
+          "tag": "llmops",
+          "description": "Observability, testing, and evaluation platform for LLM applications."
+        },
+        {
+          "title": "Prefect",
+          "url": "https://www.prefect.io/",
+          "tag": "orchestration",
+          "description": "Workflow orchestration platform for data and ML pipelines."
+        }
+      ]
+    },
+    {
+      "name": "Blogs & Newsletters",
+      "items": [
+        {
+          "title": "Eugene Yan's Newsletter",
+          "url": "https://eugeneyan.com/",
+          "tag": "applied-ml",
+          "description": "Practical ML engineering, system design, and applied research insights."
+        },
+        {
+          "title": "MLOps.community Newsletter",
+          "url": "https://mlops.community/newsletter/",
+          "tag": "mlops",
+          "description": "Weekly roundup of MLOps news, tools, and discussions."
+        },
+        {
+          "title": "The Batch (Andrew Ng)",
+          "url": "https://www.deeplearning.ai/the-batch/",
+          "tag": "ml-news",
+          "description": "Weekly digest of AI research and industry news."
+        },
+        {
+          "title": "Chip Huyen's Blog",
+          "url": "https://huyenchip.com/blog/",
+          "tag": "ml-systems",
+          "description": "Deep dives into ML systems design, production ML, and AI engineering."
+        },
+        {
+          "title": "Lilian Weng's Blog",
+          "url": "https://lilianweng.github.io/",
+          "tag": "research",
+          "description": "Technical deep-dives on ML research from OpenAI."
+        }
+      ]
+    },
+    {
+      "name": "Talks & Videos",
+      "items": [
+        {
+          "title": "Stanford CS329S: Machine Learning Systems Design",
+          "url": "https://stanford-cs329s.github.io/",
+          "tag": "course",
+          "description": "Full course on building and deploying scalable ML systems."
+        },
+        {
+          "title": "MLOps Zoomcamp (DataTalks.Club)",
+          "url": "https://github.com/DataTalks-Club/mlops-zoomcamp",
+          "tag": "course",
+          "description": "Free practical MLOps course covering monitoring, CI/CD, and deployment."
+        },
+        {
+          "title": "LLM Bootcamp (Full Stack Deep Learning)",
+          "url": "https://fullstackdeeplearning.com/llm-bootcamp/",
+          "tag": "llmops",
+          "description": "End-to-end LLM application development and deployment."
+        }
+      ]
+    },
+    {
+      "name": "Courses",
+      "items": [
+        {
+          "title": "Machine Learning Engineering for Production (MLOps) Specialization",
+          "authors": "Andrew Ng, DeepLearning.AI",
+          "url": "https://www.deeplearning.ai/courses/machine-learning-engineering-for-production-mlops/",
+          "tag": "certification"
+        },
+        {
+          "title": "Designing Machine Learning Systems",
+          "authors": "Chip Huyen (O'Reilly)",
+          "url": "https://www.oreilly.com/library/view/designing-machine-learning/9781098107956/",
+          "tag": "book"
+        },
+        {
+          "title": "Introducing MLOps",
+          "authors": "Treveil et al. (O'Reilly)",
+          "url": "https://www.oreilly.com/library/view/introducing-mlops/9781492083283/",
+          "tag": "book"
+        }
+      ]
+    },
+    {
+      "name": "Communities",
+      "items": [
+        {
+          "title": "MLOps.community Slack",
+          "url": "https://mlops.community/",
+          "tag": "slack",
+          "description": "6k+ practitioners discussing production ML, tooling, and case studies."
+        },
+        {
+          "title": "Weights & Biases Discord",
+          "url": "https://wandb.ai/site/discord",
+          "tag": "discord",
+          "description": "Active community around experiment tracking and ML best practices."
+        },
+        {
+          "title": "Hugging Face Forums",
+          "url": "https://discuss.huggingface.co/",
+          "tag": "forum",
+          "description": "Transformers, datasets, model hub, and deployment discussions."
+        },
+        {
+          "title": "r/MachineLearning",
+          "url": "https://www.reddit.com/r/MachineLearning/",
+          "tag": "reddit",
+          "description": "Large community covering ML research, news, and engineering topics."
+        }
+      ]
+    }
+  ]
+}
