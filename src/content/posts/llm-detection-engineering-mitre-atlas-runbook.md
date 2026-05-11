@@ -143,3 +143,8 @@ Things I see teams over-invest in that don't move detection efficacy:
 - **Real-time blocking on low-confidence rules**. False positives erode user trust faster than missed attacks erode security posture, in apps with low attacker prevalence. Log and review before enforcing.
 
 The detection-engineering principle that transfers cleanly from ATT&CK to ATLAS: investment goes into reducing time-to-detect for the high-impact, low-frequency events. Prompt injection is high-frequency and mostly low-impact; tool-call abuse is rare but catastrophic. Allocate accordingly.
+
+
+---
+
+*→ This post is part of the [ML Observability Hub](/posts/ml-observability-hub) — the complete index of ML monitoring and MLOps resources on SentryML.*

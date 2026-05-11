@@ -71,3 +71,8 @@ The authority gap framing is useful even if you don't care about the security fr
 - [FlashRT cuts the GPU bill on long-context prompt injection attacks](https://aisec.blog/posts/flashrt-towards-computationally-and-memory-efficient-red-tea/) — *aisec.blog*
 - [OpenAI's Under-18 Principles: a guardrail engineer reads the new Model Spec](https://guardml.io/posts/weekly-updating-our-model-spec-with-teen-protections/) — *guardml.io*
 - [Cybersecurity Burnout Is a Structural Problem, Not a Personal One](https://techsentinel.news/posts/cyber-burnout/) — *techsentinel.news*
+
+
+---
+
+*→ This post is part of the [ML Observability Hub](/posts/ml-observability-hub) — the complete index of ML monitoring and MLOps resources on SentryML.*

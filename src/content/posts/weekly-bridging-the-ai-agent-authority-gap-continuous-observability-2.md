@@ -114,3 +114,8 @@ The Hacker News piece reads like a pitch deck because it is one. The underlying 
 - [FlashRT cuts the GPU bill on long-context prompt injection attacks](https://aisec.blog/posts/flashrt-towards-computationally-and-memory-efficient-red-tea/) — *aisec.blog*
 - [Germany names UNKN: what the BKA's REvil and GandCrab dox actually buys](https://ai-alert.org/posts/weekly-germany-doxes-unkn-head-of-ru-ransomware-gangs-revil-gandcra/) — *ai-alert.org*
 - [AI Content Moderation: How LLM Filters Work and Where They Break](https://guardml.io/posts/ai-content-moderation/) — *guardml.io*
+
+
+---
+
+*→ This post is part of the [ML Observability Hub](/posts/ml-observability-hub) — the complete index of ML monitoring and MLOps resources on SentryML.*

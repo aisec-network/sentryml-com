@@ -57,3 +57,8 @@ Confidence signals are a concrete step toward that. The access constraint is rea
 **[When Embedding-Based Defenses Fail: Rethinking Safety in LLM-Based Multi-Agent Systems](https://arxiv.org/abs/2605.01133)** — The source paper (arXiv 2605.01133). Theoretical analysis and empirical validation of three embedding-bypass attacks, plus the confidence-score pruning approach.
 
 **[AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents](https://arxiv.org/abs/2406.13352)** — Debenedetti et al.'s benchmark for evaluating prompt injection at the tool boundary. Related failure mode: adversarial content injected via tool output rather than agent-to-agent messages, but the same gap in behavioral monitoring applies.
+
+
+---
+
+*→ This post is part of the [ML Observability Hub](/posts/ml-observability-hub) — the complete index of ML monitoring and MLOps resources on SentryML.*

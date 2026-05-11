@@ -90,3 +90,8 @@ The catch is that self-hosted inference is infrastructure you own. That means it
 - [We ran Qwen3.6-27B on $800 of consumer GPUs, day one: llama.cpp vs vLLM](https://llmkube.com/blog/qwen3-6-27b-bakeoff) — LLMKube's benchmarking report with concrete throughput numbers, context length tradeoffs, and cost-per-token analysis on consumer hardware.
 
 - [Qwen3.6-27B: Flagship-Level Coding in a 27B Dense Model](https://simonwillison.net/2026/Apr/22/qwen36-27b/) — Simon Willison's writeup on model capabilities, local inference viability, and benchmark context including SWE-bench Verified scores.
+
+
+---
+
+*→ This post is part of the [ML Observability Hub](/posts/ml-observability-hub) — the complete index of ML monitoring and MLOps resources on SentryML.*

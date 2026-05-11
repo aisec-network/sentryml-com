@@ -58,3 +58,8 @@ The other limitation is generality. The action catalogs in the paper are SOC-spe
 
 - [Stable Agentic Control: Tool-Mediated LLM Architecture for Autonomous Cyber Defense](https://arxiv.org/abs/2605.03034) — Prinos et al., arXiv:2605.03034 (May 2026). The primary source. Includes the Lean 4 certificate, the 282-attack-graph evaluation, and the Sonnet 4 / Haiku 4.5 game-value comparison.
 - [The Path To Autonomous Cyber Defense](https://arxiv.org/abs/2404.10788) — Oesch et al., arXiv:2404.10788 (April 2024). ORNL survey framing the SOC operational problem the new paper is responding to.
+
+
+---
+
+*→ This post is part of the [ML Observability Hub](/posts/ml-observability-hub) — the complete index of ML monitoring and MLOps resources on SentryML.*
