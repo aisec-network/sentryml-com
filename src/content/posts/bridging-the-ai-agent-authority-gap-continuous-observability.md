@@ -28,7 +28,7 @@ If you run a model in production, this is not a security headline. This is a run
 
 The Orchid Security post (the vendor behind the framing) calls the unobserved delegation surface "identity dark matter." The same shape exists for inference. A request hits a model gateway. The gateway invokes a tool-using agent. The agent calls a retrieval service, then a finetuned classifier, then a third-party API, then writes to a feature store. By the time the call graph terminates, the originating principal is three hops away, and the only thing your monitoring stack saw was a pile of `POST /v1/chat/completions` spans with no parent context worth anything.
 
-This is the same observability gap that broke distributed tracing in microservices a decade ago, except the "service" is now a probabilistic one and the "call" includes a tool-use loop the model decided on at runtime.
+This is the same observability gap that broke distributed [tracing](https://mlobserve.com/) in microservices a decade ago, except the "service" is now a probabilistic one and the "call" includes a tool-use loop the model decided on at runtime.
 
 ## Mechanics
 
@@ -75,4 +75,4 @@ The authority gap framing is useful even if you don't care about the security fr
 
 ---
 
-*→ This post is part of the [ML Observability Hub](/posts/ml-observability-hub) — the complete index of ML monitoring and MLOps resources on SentryML.*
+*→ This post is part of the [ML Observability Hub](/posts/ml-observability-hub) — the complete index of [ML monitoring](https://mlmonitoring.report/) and MLOps resources on SentryML.*

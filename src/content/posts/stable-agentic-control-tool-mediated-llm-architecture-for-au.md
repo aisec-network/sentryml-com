@@ -16,7 +16,7 @@ schema:
 
 A paper landed on arXiv this week that is worth the attention of anyone running an LLM agent in production, even if your agent never goes near a security operations center. The authors put a tool-mediated LLM controller through a Lean 4 proof, with zero `sorry`, certifying controllability, observability from asymmetric sensor data, and Input-to-State Stability (ISS) under intelligent adversarial disturbance. The empirical evaluation is on 282 real enterprise attack graphs ([Prinos et al., 2026](https://arxiv.org/abs/2605.03034)).
 
-The applied result is the part that matters for ML platform teams: a tool-mediated Claude Sonnet 4 controller cut the attacker's expected game value by 59% versus a deterministic greedy baseline, with **zero variance across 40 runs at four temperatures**. A Claude Haiku 4.5 controller in the same harness converged to suboptimal payoffs but stayed catalog-bounded across an additional 40 runs. Quoting the abstract: "architectural stability is not dependent on the controller capability."
+The applied result is the part that matters for [ML platform](https://mlopsplatforms.com/) teams: a tool-mediated Claude Sonnet 4 controller cut the attacker's expected game value by 59% versus a deterministic greedy baseline, with **zero variance across 40 runs at four temperatures**. A Claude Haiku 4.5 controller in the same harness converged to suboptimal payoffs but stayed catalog-bounded across an additional 40 runs. Quoting the abstract: "architectural stability is not dependent on the controller capability."
 
 That last sentence is the one to pin to the wall.
 
@@ -62,4 +62,4 @@ The other limitation is generality. The action catalogs in the paper are SOC-spe
 
 ---
 
-*→ This post is part of the [ML Observability Hub](/posts/ml-observability-hub) — the complete index of ML monitoring and MLOps resources on SentryML.*
+*→ This post is part of the [ML Observability Hub](/posts/ml-observability-hub) — the complete index of [ML monitoring](https://mlmonitoring.report/) and MLOps resources on SentryML.*

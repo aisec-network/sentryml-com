@@ -44,7 +44,7 @@ Zhang et al. propose a defense that uses these confidence signals — either log
 
 ## Mechanics: why this is an observability problem, not a model problem
 
-Step back from the paper for a moment and the deeper story is uncomfortably familiar to anyone who has been on call for an ML platform. The failure mode is the same one we have been living with in tabular ML for a decade: a feature whose univariate distribution looks fine but whose conditional structure has shifted. Drift-detection libraries learned this lesson the hard way, which is why modern monitoring stacks ship multivariate detectors, conditional KS tests, and integrated reconstruction-error baselines instead of just thresholding the L2 distance of an embedding from a centroid.
+Step back from the paper for a moment and the deeper story is uncomfortably familiar to anyone who has been on call for an [ML platform](https://mlopsplatforms.com/). The failure mode is the same one we have been living with in tabular ML for a decade: a feature whose univariate distribution looks fine but whose conditional structure has shifted. Drift-detection libraries learned this lesson the hard way, which is why modern monitoring stacks ship multivariate detectors, conditional KS tests, and integrated reconstruction-error baselines instead of just thresholding the L2 distance of an embedding from a centroid.
 
 Embedding-distance detection in MAS is essentially univariate distribution monitoring with extra steps. It collapses a high-dimensional generative process down to a scalar distance, throws away the rest of the signal the model literally just computed, and then asks one threshold to do the work of a full anomaly-detection pipeline. When the planner-side team frames this as "we need a better detector model," they are reaching for a bigger hammer. The thing that broke is the choice to instrument only one channel.
 
@@ -88,7 +88,7 @@ For organizations whose threat model leans more toward adversarial inputs and re
 
 The honest summary: embedding-based detection in multi-agent systems has been a comforting placebo. Zhang et al. did the field a favor by showing exactly how it fails and offering a concrete, low-cost mitigation that anyone running production inference can roll out without a model retrain. The work to do is mostly observability work: capture logprobs you are already computing, persist them, alert on them per agent role, and stop pretending that one embedding distance per message is enough signal to detect a coordinated peer.
 
-If you take exactly one task away from this post: open whatever monitoring config governs your agent system, find the line where messages get logged, and check whether you are also logging the token confidence vector. If you are not, that is the next ticket.
+If you take exactly one task away from this post: open whatever monitoring config governs your agent system, find the line where messages get logged, and check whether you are also [logging](https://mlobserve.com/) the token confidence vector. If you are not, that is the next ticket.
 
 ## Sources
 
@@ -97,3 +97,8 @@ If you take exactly one task away from this post: open whatever monitoring confi
 - [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework) — The Govern/Map/Measure/Manage taxonomy the operational takeaways above are mapped to, plus the Generative AI Profile that calls out adversarial robustness as an explicit measurement objective.
 - [OpenTelemetry Semantic Conventions for Generative AI](https://opentelemetry.io/docs/specs/semconv/gen-ai/) — The live (still under development) spec for instrumenting LLM and agent operations. The right starting point for adding logprob attributes to agent spans rather than rolling your own ad-hoc schema.
 - [Prompt Injection Attacks in Large Language Models and AI Agent Systems (MDPI Information, 2026)](https://www.mdpi.com/2078-2489/17/1/54) — Broader review of injection-attack taxonomies and defenses. Useful for putting the multi-agent failure mode in the context of the wider attack surface.
+
+## See also
+
+- [LLM operations guide](https://llmops.report/)
+- [ML monitoring practices](https://mlmonitoring.report/)

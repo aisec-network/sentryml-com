@@ -47,7 +47,7 @@ Here's the part that rarely appears in the "local LLM is great" posts: cloud API
 
 When you call a managed coding API, the vendor handles inference infrastructure monitoring, model version pinning, error rates, and — for better or worse — review processes that constrain what gets run. The original poster framed the review process as a negative (not having "some arbitrary review process to decide if I get to keep my account"). For some organizations, that review process is actually their compliance posture, and removing it requires replacing it.
 
-More operationally relevant: you lose the vendor's internal observability. Cloud APIs generally expose request/response logging, latency histograms, and sometimes quality signals. With local inference, none of that exists unless you build it. (For the security testing angle — how attackers probe local inference endpoints for prompt injection and model extraction — [aisec.blog](https://aisec.blog) covers that attack surface.)
+More operationally relevant: you lose the vendor's internal observability. Cloud APIs generally expose request/response [logging](https://mlobserve.com/), latency histograms, and sometimes quality signals. With local inference, none of that exists unless you build it. (For the security testing angle — how attackers probe local inference endpoints for prompt injection and model extraction — [aisec.blog](https://aisec.blog) covers that attack surface.)
 
 Specifically, what you now need to instrument:
 
@@ -94,4 +94,4 @@ The catch is that self-hosted inference is infrastructure you own. That means it
 
 ---
 
-*→ This post is part of the [ML Observability Hub](/posts/ml-observability-hub) — the complete index of ML monitoring and MLOps resources on SentryML.*
+*→ This post is part of the [ML Observability Hub](/posts/ml-observability-hub) — the complete index of [ML monitoring](https://mlmonitoring.report/) and MLOps resources on SentryML.*

@@ -10,7 +10,7 @@ schema:
   type: "Article"
 ---
 
-Most ML monitoring failures happen not because teams lacked tooling, but because they were watching the wrong signals. Embedding similarity scores look fine while a malicious agent drifts its behavior across 40 runs. Model latency dashboards are green while logit-level confidence on critical decisions collapses. Trace spans capture every inference call while the action catalog that actually bounds agent behavior goes completely unmonitored.
+Most [ML monitoring](https://mlmonitoring.report/) failures happen not because teams lacked tooling, but because they were watching the wrong signals. Embedding similarity scores look fine while a malicious agent drifts its behavior across 40 runs. Model latency dashboards are green while logit-level confidence on critical decisions collapses. Trace spans capture every inference call while the action catalog that actually bounds agent behavior goes completely unmonitored.
 
 SentryML covers ML observability from the perspective of engineers who've been handed a production LLM deployment and need to keep it behaving correctly — not from the perspective of vendors who want to sell you a dashboard. That means we cover what signals actually indicate problems, what the open-source and commercial tooling does and doesn't catch, and how to build detection layers that hold up under adversarial conditions.
 
@@ -57,7 +57,7 @@ A complete treatment: how to map LLM application telemetry to MITRE ATLAS techni
 ## Local Inference and Observability Ownership
 
 **[Local Coding Assistants Have Crossed the Quality Bar — Now You Own the Observability](/posts/if-you-ve-been-waiting-to-try-local-ai-development-please-tr)**
-When you move from cloud-managed APIs to local inference, usage metering, request logging, and safety filtering all become your problem. A practical look at what monitoring obligations shift when you run Qwen3.6-27B locally instead of calling a vendor endpoint.
+When you move from cloud-managed APIs to local inference, usage metering, request [logging](https://mlobserve.com/), and safety filtering all become your problem. A practical look at what monitoring obligations shift when you run Qwen3.6-27B locally instead of calling a vendor endpoint.
 
 ---
 

@@ -30,9 +30,9 @@ That framing matters to anyone who runs ML in production, because the proposed c
 
 The Orchid piece is the latest in a roughly six-month run of announcements that all converge on the same idea. CrowdStrike picked up SGNL specifically to bolt identity decisions onto runtime context. Datadog [shipped native support for the OpenTelemetry GenAI semantic conventions](https://www.datadoghq.com/blog/llm-otel-semantic-convention/). Arize and Google Cloud announced a [standardized telemetry mandate for enterprise agents](https://thenewstack.io/ai-agent-telemetry-standardization/), aligning the Gemini agent service around OpenTelemetry and OpenInference. Each of those moves treats spans, traces, and events as the source of authority data, not the audit log that gets glanced at after an incident.
 
-This is a real shift. The first wave of LLM observability looked like classic APM with a token-count column added. Tools competed on prompt logging and cost dashboards. The agent wave is different because the failure mode is different. Agents fail in ways that look like success — well-formed outputs, syntactically valid tool calls, plausible reasoning traces — and the only way to catch the bad ones is to inspect the decision sequence, not the final response. Arize's own framing puts it bluntly: in the DevOps era we monitored server health, in the MLOps era we monitored model drift, [in the agent era we monitor decisions](https://arize.com/blog/best-ai-observability-tools-for-autonomous-agents-in-2026/).
+This is a real shift. The first wave of LLM observability looked like classic APM with a token-count column added. Tools competed on prompt [logging](https://mlobserve.com/) and cost dashboards. The agent wave is different because the failure mode is different. Agents fail in ways that look like success — well-formed outputs, syntactically valid tool calls, plausible reasoning traces — and the only way to catch the bad ones is to inspect the decision sequence, not the final response. Arize's own framing puts it bluntly: in the DevOps era we monitored server health, in the MLOps era we monitored [model drift](https://mlmonitoring.report/), [in the agent era we monitor decisions](https://arize.com/blog/best-ai-observability-tools-for-autonomous-agents-in-2026/).
 
-If the decisions themselves are the unit of governance, the team that owns the trace pipeline owns the governance plane. That is currently the ML platform team in most organizations.
+If the decisions themselves are the unit of governance, the team that owns the trace pipeline owns the governance plane. That is currently the [ML platform](https://mlopsplatforms.com/) team in most organizations.
 
 ## Mechanics: what an "authority span" actually has to carry
 
@@ -119,3 +119,5 @@ The Hacker News piece reads like a pitch deck because it is one. The underlying 
 ---
 
 *→ This post is part of the [ML Observability Hub](/posts/ml-observability-hub) — the complete index of ML monitoring and MLOps resources on SentryML.*
+
+For more context, [LLM operations guide](https://llmops.report/) covers related topics in depth.

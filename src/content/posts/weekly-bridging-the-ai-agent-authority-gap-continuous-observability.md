@@ -34,7 +34,7 @@ Read it twice and a different shape emerges. The security industry is reaching f
 
 The Hacker News article is one of three converging pressure points this quarter. The second is the [OWASP Top 10 for Agentic Applications 2026](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/), released as a peer-reviewed framework with three of its top risks — Agent Goal Hijack (ASI01), Tool Misuse and Exploitation (ASI02), and Identity and Privilege Abuse (ASI03) — sitting squarely in observability territory. The [Entro Security walkthrough](https://entro.security/blog/the-owasp-agentic-top-10-2026-what-it-means-for-ai-agents-and-non-human-identities/) of that list is blunt: "you cannot secure [AI agents](https://techsentinel.news/posts/weekly-how-ai-assistants-are-moving-the-security-goalposts/) without securing the non-human identities and secrets that power them," and the recommended controls — short-lived dynamic credentials, JIT privileged access, agent identities tethered to a human owner — are useless without telemetry that ties them to actual runtime behavior.
 
-The third pressure point is a January [arXiv paper on agent drift](https://arxiv.org/abs/2601.04170) that quantified semantic deviation in multi-agent LLM systems and found that drift emerged after a median of 73 interactions in their simulations. That number is ugly. It means an agent that passes pre-deployment eval can be off-spec inside a single business day in production. The paper's recommended detection method — scheduled replay of a 50–500 trace golden set, run daily or on every deploy, with sustained drops flagged as drift events — is straight out of the ML monitoring playbook. We have done this for tabular models for a decade.
+The third pressure point is a January [arXiv paper on agent drift](https://arxiv.org/abs/2601.04170) that quantified semantic deviation in multi-agent LLM systems and found that drift emerged after a median of 73 interactions in their simulations. That number is ugly. It means an agent that passes pre-deployment eval can be off-spec inside a single business day in production. The paper's recommended detection method — scheduled replay of a 50–500 trace golden set, run daily or on every deploy, with sustained drops flagged as drift events — is straight out of the [ML monitoring](https://mlmonitoring.report/) playbook. We have done this for tabular models for a decade.
 
 The signal across all three is the same: agent behavior in production is a high-dimensional time series of structured events, and someone needs to sit on top of it.
 
@@ -78,7 +78,7 @@ Three plausible architectures, each with real tradeoffs:
 
 3. **Post-hoc enrichment in the observability backend.** Phoenix or Datadog joins trace IDs against an audit log from your IAM or NHI platform on read. This is the easiest to ship and the worst at runtime decisions, because by the time the join happens the action has already executed.
 
-The vendor article reads like an argument for option 1 with the implication that you need to buy their identity layer to make it work. The honest read is that most teams will land on option 2 — and that means the ML platform team is going to get tickets asking them to add a couple of OTel processors, not to rip out their observability stack.
+The vendor article reads like an argument for option 1 with the implication that you need to buy their identity layer to make it work. The honest read is that most teams will land on option 2 — and that means the [ML platform](https://mlopsplatforms.com/) team is going to get tickets asking them to add a couple of OTel processors, not to rip out their observability stack.
 
 The other piece worth naming: agents are going to fail in ways that look like drift but are actually authority leakage. An agent that starts hitting tools it has never hit before could be drifting semantically (a prompt regression, a model upgrade, a poisoned memory entry), or it could be exercising authority it inherited from a different session via a context-poisoning attack. The trace looks similar in both cases. Telling them apart requires the identity attributes on the span. ML monitoring teams that treat this as a pure quality problem will miss the security signal; security teams that treat it as a pure access-control problem will miss the drift. The runbook has to handle both.
 
@@ -118,3 +118,8 @@ The vendor framing of an "authority gap" is real but partial. The full picture i
 ---
 
 *→ This post is part of the [ML Observability Hub](/posts/ml-observability-hub) — the complete index of ML monitoring and MLOps resources on SentryML.*
+
+## See also
+
+- [LLM operations guide](https://llmops.report/)
+- [ML observability tools](https://mlobserve.com/)

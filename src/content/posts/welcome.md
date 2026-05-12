@@ -34,4 +34,6 @@ Real content starts shortly.
 
 ---
 
-*→ This post is part of the [ML Observability Hub](/posts/ml-observability-hub) — the complete index of ML monitoring and MLOps resources on SentryML.*
+*→ This post is part of the [ML Observability Hub](/posts/ml-observability-hub) — the complete index of [ML monitoring](https://mlmonitoring.report/) and MLOps resources on SentryML.*
+
+For more context, [LLM operations guide](https://llmops.report/) covers related topics in depth.

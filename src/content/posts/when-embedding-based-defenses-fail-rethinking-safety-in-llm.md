@@ -40,7 +40,7 @@ One important caveat from the analysis: confidence signal effectiveness decays o
 
 Most teams running multi-agent pipelines aren't doing embedding-based agent monitoring or confidence-based monitoring. They're watching latency, error rates, token cost, and maybe output string comparisons at the pipeline level. The paper's threat model may feel remote. But its monitoring architecture is directly applicable as a design pattern, and the decay finding has immediate runbook implications.
 
-**Start logging logprobs per agent turn.** Most OpenAI-compatible endpoints expose token-level log probabilities. If you're calling them, log `logprobs` output alongside the completion. You don't need an anomaly detector wired up on day one — having the signal in your telemetry store is the prerequisite. A sudden shift in average output confidence from a specific agent in your pipeline is detectable from that data without any specialized tooling.
+**Start [logging](https://mlobserve.com/) logprobs per agent turn.** Most OpenAI-compatible endpoints expose token-level log probabilities. If you're calling them, log `logprobs` output alongside the completion. You don't need an anomaly detector wired up on day one — having the signal in your telemetry store is the prerequisite. A sudden shift in average output confidence from a specific agent in your pipeline is detectable from that data without any specialized tooling.
 
 **Track per-agent output variance across rounds, not just point values.** An agent participating in a genuine multi-round debate should shift position as evidence accumulates. An agent producing unnaturally consistent outputs across rounds — low embedding variance over time — is behaving like an optimized message injector, not a genuine reasoning participant. This is visible from the same trace data you're probably already emitting; it just requires a time-series view rather than a per-call view.
 
@@ -61,4 +61,4 @@ Confidence signals are a concrete step toward that. The access constraint is rea
 
 ---
 
-*→ This post is part of the [ML Observability Hub](/posts/ml-observability-hub) — the complete index of ML monitoring and MLOps resources on SentryML.*
+*→ This post is part of the [ML Observability Hub](/posts/ml-observability-hub) — the complete index of [ML monitoring](https://mlmonitoring.report/) and MLOps resources on SentryML.*
