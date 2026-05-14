@@ -103,4 +103,12 @@ Benchmark numbers are a starting signal for model selection. What tells you whet
 
 - **EleutherAI lm-evaluation-harness**: [https://github.com/EleutherAI/lm-evaluation-harness](https://github.com/EleutherAI/lm-evaluation-harness) — Open-source framework supporting 200+ benchmark tasks with standardized prompting, reproducible scoring, and custom task definition via YAML. Backend for the Hugging Face Open LLM Leaderboard.
 
-- **30 LLM Evaluation Benchmarks and How They Work — Evidently AI**: [https://www.evidentlyai.com/llm-guide/llm-benchmarks](https://www.evidentlyai.com/llm-guide/llm-benchmarks) — Practitioner-oriented breakdown of benchmark mechanics, metric definitions, and tool recommendations across the current benchmark landscape.
+- **30 [LLM Evaluation](https://aisecbench.com/posts/llm-eval-benchmark-fidelity/) Benchmarks and How They Work — Evidently AI**: [https://www.evidentlyai.com/llm-guide/llm-benchmarks](https://www.evidentlyai.com/llm-guide/llm-benchmarks) — Practitioner-oriented breakdown of benchmark mechanics, metric definitions, and tool recommendations across the current benchmark landscape.
+
+## Related across the network
+
+- [LLM Evaluation Benchmark Fidelity: Why MMLU Scores Don't Predict Production Quality](https://aisecbench.com/posts/llm-eval-benchmark-fidelity/) — *aisecbench.com*
+- [Open Source LLM Security Testing Tools: The Practitioner's Toolkit](https://bestaisecuritytools.com/posts/open-source-llm-security-testing/) — *bestaisecuritytools.com*
+- [How to Benchmark AI Security Tools: Evaluation Methodology for 2026](https://ai-alert.org/posts/aisecbench-2026-evaluation-methodology/) — *ai-alert.org*
+- [Jailbreak AI: How Attackers Break Safety Alignment and What You Can Do About It](https://aisec.blog/posts/jailbreak-ai/) — *aisec.blog*
+- [LLM Safety: What It Actually Means and How to Build It](https://guardml.io/posts/llm-safety/) — *guardml.io*
