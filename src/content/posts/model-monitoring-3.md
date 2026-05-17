@@ -16,7 +16,7 @@ schema:
   type: "TechArticle"
 ---
 
-Model monitoring for a scikit-learn classifier and model monitoring for an LLM inference endpoint are related disciplines that share almost no tooling overlap at the operational layer. The classic framework — track input distributions, compute PSI against a reference dataset, alert when PSI exceeds 0.2 — still applies. But LLM deployments generate a different failure surface, and that surface is almost entirely invisible to standard APM.
+[Model monitoring](https://mlmonitoring.report/posts/ml-model-monitoring-best-practices/) for a scikit-learn classifier and model monitoring for an LLM inference endpoint are related disciplines that share almost no tooling overlap at the operational layer. The classic framework — track input distributions, compute PSI against a reference dataset, alert when PSI exceeds 0.2 — still applies. But LLM deployments generate a different failure surface, and that surface is almost entirely invisible to standard APM.
 
 The signals that matter for LLM inference run in three tiers: latency metrics that catch infrastructure failure, distribution metrics that catch input behavior change, and output quality metrics that catch model degradation. Most teams instrument the first tier and skip the other two until a user complaint lands.
 
@@ -31,7 +31,7 @@ The metric hierarchy:
 - **Throughput (tokens/sec)**: aggregate output tokens per second across all concurrent requests. Use this to detect tensor parallelism imbalance — if one GPU in a TP-2 setup is slower, throughput falls while per-request latency may look fine.
 - **Queue depth**: number of requests waiting for a batch slot. The queue depth metric often gives you 30–60 seconds of warning before TTFT degrades visibly.
 
-vLLM exposes these via its `/metrics` Prometheus endpoint out of the box. Wire Grafana against it, set a p99 TTFT alert at 1.5× your baseline, and you'll catch most infrastructure-level problems before users do.
+vLLM exposes these via its `/metrics` Prometheus endpoint out of the box. Wire Grafana against it, set a p99 TTFT alert at 1.5× your baseline, and you'll catch most infrastructure-level problems [before users do](https://mlmonitoring.report/posts/silent-quality-decay-llm-production/).
 
 ## Tier 2 — Input Distribution Monitoring
 
@@ -108,7 +108,7 @@ def record_inference(prompt_tokens: int, output_tokens: int,
 With this instrumentation running, Prometheus scrapes the `/metrics` endpoint and you get per-model histograms for all four dimensions. Build a Grafana dashboard with:
 - TTFT p50/p95/p99 time series with threshold bands
 - `rate(llm_refusals_total[1h]) / rate(llm_requests_total[1h])` as refusal rate
-- Prompt/output token count p95 with 7-day overlay for visual drift detection
+- Prompt/output token count p95 with 7-day overlay for visual [drift detection](https://llmops.report/posts/concept-drift-detection-in-production/)
 
 ## What You'll See
 
@@ -127,3 +127,11 @@ PSI on prompt length assumes your bucketization is stable. If your tokenizer cha
 - [Data Drift Detection: Methods and Metrics — Evidently AI](https://www.evidentlyai.com/ml-in-production/data-drift): comprehensive overview of statistical tests (KS, PSI, KL, Wasserstein) and how Evidently's open-source library implements them, including 20+ drift detection presets.
 - [KL Divergence: When to Use Kullback-Leibler Divergence — Arize AI](https://arize.com/blog-course/kl-divergence/): practical guidance on when to use KL vs PSI, the asymmetry problem, and cardinality limits for categorical features.
 - [Measuring Data Drift with the Population Stability Index — Fiddler AI](https://www.fiddler.ai/blog/measuring-data-drift-population-stability-index): PSI formula, standard industry thresholds (< 0.1 / 0.1–0.2 / > 0.2), and Fiddler's application to production feature monitoring.
+
+## Related across the network
+
+- [Data Drift Detection in Machine Learning: Methods, Tests, and Production Practice](https://mlmonitoring.report/posts/data-drift-detection-machine-learning/) — *mlmonitoring.report*
+- [ML Model Monitoring Best Practices for Production Systems](https://mlmonitoring.report/posts/ml-model-monitoring-best-practices/) — *mlmonitoring.report*
+- [Concept Drift Detection in Production: Practical Thresholds and Why Most Alerts Are Noise](https://llmops.report/posts/concept-drift-detection-in-production/) — *llmops.report*
+- [MLOps Tool Review: Arize vs Evidently](https://llmops.report/posts/arize-vs-evidently/) — *llmops.report*
+- [Silent Quality Decay in Production LLM Apps: How to Detect Drift Before Users Do](https://mlmonitoring.report/posts/silent-quality-decay-llm-production/) — *mlmonitoring.report*
