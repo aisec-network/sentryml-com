@@ -101,7 +101,7 @@ When you see anomalous drift, cross-reference with [ai-alert.org](https://ai-ale
 
 ## Caveats
 
-**Label delay is the hard problem.** Building a feedback loop to return ground truth to your monitoring system requires real engineering investment. Without it, you're relying on PSI alone, which catches input drift but not concept drift — where the relationship between inputs and the correct output changes without any distributional shift in the features themselves.
+**Label delay is the hard problem.** Building a feedback loop to return ground truth to your monitoring system requires real engineering investment. Without it, you're relying on PSI alone, which catches input drift but not [concept drift](https://llmops.report/posts/concept-drift-detection-in-production/) — where the relationship between inputs and the correct output changes without any distributional shift in the features themselves.
 
 **Thresholds are context-sensitive.** The 0.1/0.2 PSI thresholds originated in credit scoring. A fraud model operating against an adversarial distribution may need tighter thresholds. A stable demand forecasting model may tolerate PSI > 0.2 on some features without meaningful accuracy impact. Calibrate thresholds against observed retraining outcomes in your system, not industry defaults from a different domain.
 
@@ -116,3 +116,11 @@ When you see anomalous drift, cross-reference with [ai-alert.org](https://ai-ale
 - **[Measuring Data Drift with the Population Stability Index — Fiddler AI](https://www.fiddler.ai/blog/measuring-data-drift-population-stability-index)**: PSI formula, threshold interpretation, and the connection to KL divergence. Fiddler's platform uses PSI as its primary feature drift signal in production. Vendor source — their thresholds match industry-wide conventions from financial services, where PSI originated.
 
 - **[ML Model Monitoring in Production: Best Practices — Datadog](https://www.datadoghq.com/blog/ml-model-monitoring-in-production-best-practices/)**: Practical runbook guidance from Datadog's ML observability team on alerting strategies, prediction log archiving in object storage, and correlating model metrics with business KPIs. Vendor source.
+
+## Related across the network
+
+- [ML Model Monitoring Best Practices for Production Systems](https://mlmonitoring.report/posts/ml-model-monitoring-best-practices/) — *mlmonitoring.report*
+- [Data Drift Detection in Machine Learning: Methods, Tests, and Production Practice](https://mlmonitoring.report/posts/data-drift-detection-machine-learning/) — *mlmonitoring.report*
+- [Concept Drift Detection in Production: Practical Thresholds and Why Most Alerts Are Noise](https://llmops.report/posts/concept-drift-detection-in-production/) — *llmops.report*
+- [MLOps Tool Review: Arize vs Evidently](https://llmops.report/posts/arize-vs-evidently/) — *llmops.report*
+- [Silent Quality Decay in Production LLM Apps: How to Detect Drift Before Users Do](https://mlmonitoring.report/posts/silent-quality-decay-llm-production/) — *mlmonitoring.report*
